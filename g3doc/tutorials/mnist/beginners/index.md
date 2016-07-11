@@ -74,6 +74,7 @@ We also add some extra evidence called a bias. Basically, we want to be able
 to say that some things are more likely independent of the input. The result is
 that the evidence for a class \\(i\\) given an input \\(x\\) is:
 
+*E = mc<sup>2</sup>*
 \\[ \frac{1}{n^{2}} \\]
 \\[ text{evidence}_i = \sum_j W_{i,~ j} x_j + b_i \\]
 
