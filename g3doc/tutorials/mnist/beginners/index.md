@@ -53,30 +53,17 @@ MNIST에서 각각에 대응하는 라벨은 0과 9사이의 숫자이며, 각 �
 
 그럼 이제 실제로 우리의 모델을 만들 준비가 되었습니다.
 
-## Softmax Regressions
+## 소프트맥스 회귀
 
-We know that every image in MNIST is a digit, whether it's a zero or a nine. We
-want to be able to look at an image and give probabilities for it being each
-digit. For example, our model might look at a picture of a nine and be 80% sure
-it's a nine, but give a 5% chance to it being an eight (because of the top loop)
-and a bit of probability to all the others because it isn't sure.
+우리는 MNIST의 모든 이미지가 0에서 9까지의 숫자임을 알고 있습니다. 우리는 이미지를 보고, 그에 해당하는 확률을 부여하고자 합니다. 예를 들어서, 우리의 모델은 9의 사진을 보고 그것이 9라고 80% 정도 확신하지만, 8일 수도 있다고 5% 정도의 확률을 부여합니다.(왜냐하면 숫자 위쪽의 동그란 부분 때문입니다.) 또한, 각 숫자를 완전히 확신할 수 없기 때문에 모든 숫자에 조금씩의 확률을 부여합니다.
 
-This is a classic case where a softmax regression is a natural, simple model.
-If you want to assign probabilities to an object being one of several different
-things, softmax is the thing to do. Even later on, when we train more
-sophisticated models, the final step will be a layer of softmax.
+이것이 소프트맥스 회귀가 자연스럽고 간단한 모델이라는 전형적인 예시입니다. 만약 당신이 여러가지 중 하나에 확률을 부여하고자 한다면, 소프트맥스가 그것을 해줍니다. 뒤에 가서 우리가 좀 더 복잡한 모델을 학습시킬 때조차, 맨 마지막 단계는 소프트맥스 층이 될 것입니다.
 
-A softmax regression has two steps: first we add up the evidence of our input
-being in certain classes, and then we convert that evidence into probabilities.
+소프트맥스 회귀는 두 단계를 거칩니다. 첫째, 각 입력의 증거를 특정한 클래스에 속하도록 더합니다. 둘째, 증거를 확률로 변환합니다.
 
-To tally up the evidence that a given image is in a particular class, we do a
-weighted sum of the pixel intensities. The weight is negative if that pixel
-having a high intensity is evidence against the image being in that class,
-and positive if it is evidence in favor.
+주어진 이미지가 특정 클래스에 속한다는 증거를 모두 더하기 위해서, 우리는 픽셀 강도의 가중된 합계를 냅니다. 만약 높은 강도를 가진 픽셀이 그 클래스에 속하지 않은 이미지의 증거라면, 가중치는 음수입니다. 만약 그 클래스에 속한 이미지의 증거라면, 가중치는 양수입니다.
 
-The following diagram shows the weights one model learned for each of these
-classes. Red represents negative weights, while blue represents positive
-weights.
+다음의 다이어그램은 모델이 각 클래스에 관해 배운 가중치를 보여줍니다. 빨간색은 음수의 가중치를, 파란색은 양수의 가중치를 보여줍니다.
 
 <div style="width:40%; margin:auto; margin-bottom:10px; margin-top:20px;">
 <img style="width:100%" src="../../../images/softmax-weights.png">
