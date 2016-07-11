@@ -75,6 +75,36 @@ that the evidence for a class \\(i\\) given an input \\(x\\) is:
 
 $$\text{evidence}_i = \sum_j W_{i,~ j} x_j + b_i$$
 
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mtext>evidence</mtext>
+    <mi>i</mi>
+  </msub>
+  <mo>=</mo>
+  <munder>
+    <mo>&#x2211;<!-- ∑ --></mo>
+    <mi>j</mi>
+  </munder>
+  <msub>
+    <mi>W</mi>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>i</mi>
+      <mo>,</mo>
+      <mtext>&#xA0;</mtext>
+      <mi>j</mi>
+    </mrow>
+  </msub>
+  <msub>
+    <mi>x</mi>
+    <mi>j</mi>
+  </msub>
+  <mo>+</mo>
+  <msub>
+    <mi>b</mi>
+    <mi>i</mi>
+  </msub>
+</math>
+
 where \\(W_i\\) is the weights and \\(b_i\\) is the bias for class \\(i\\),
 and \\(j\\) is an index for summing over the pixels in our input image \\(x\\).
 We then convert the evidence tallies into our predicted probabilities
