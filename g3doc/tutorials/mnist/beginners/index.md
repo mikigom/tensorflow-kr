@@ -73,7 +73,6 @@ We also add some extra evidence called a bias. Basically, we want to be able
 to say that some things are more likely independent of the input. The result is
 that the evidence for a class \\(i\\) given an input \\(x\\) is:
 
-$$\text{evidence}_i = \sum_j W_{i,~ j} x_j + b_i$$
 \\[text{evidence}_i = \sum_j W_{i,~ j} x_j + b_i\\]
 
 where \\(W_i\\) is the weights and \\(b_i\\) is the bias for class \\(i\\),
