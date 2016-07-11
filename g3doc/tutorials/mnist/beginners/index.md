@@ -73,12 +73,8 @@ We also add some extra evidence called a bias. Basically, we want to be able
 to say that some things are more likely independent of the input. The result is
 that the evidence for a class \\(i\\) given an input \\(x\\) is:
 
-<head>
- <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-            \text{evidence}_i = \sum_j W_{i,~ j} x_j + b_i
-    </script>
-</head>
+
+\[ text{evidence}_i = \sum_j W_{i,~ j} x_j + b_i \]
 
 where \\(W_i\\) is the weights and \\(b_i\\) is the bias for class \\(i\\),
 and \\(j\\) is an index for summing over the pixels in our input image \\(x\\).
